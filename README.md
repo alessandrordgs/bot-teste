@@ -1,4 +1,5 @@
 # **Teste feito com ReactJS**
+  
 
 ## Tecnologias usadas:
 
@@ -12,12 +13,14 @@
 - Formik
 - Axios
 
-### Como funciona?
+## Como funciona?
 
 - Você deve colocar seu nome, idade, localidade e e-mail nos campos/inputs;
 - Os dados serão enviados para a API Rest.
 
-#### Imagens
+##
+
+## Imagens
 
 **Parte inicial**
 
