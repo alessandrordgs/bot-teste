@@ -3,10 +3,14 @@
 ## Tecnologias usadas:
 
 - React JS
+
+- Api Rest (feita no mockAPI)
+
+## Bibliotecas usadas:
+
 - Yup
 - Formik
 - Axios
-- Api Rest (feita no mockAPI)
 
 ### Como funciona?
 
