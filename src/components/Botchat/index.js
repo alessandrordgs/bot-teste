@@ -3,7 +3,7 @@ import React from 'react';
 import './style.css';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-
+import api from '../../services/api'
 import axios from 'axios';
 /*import { useForm } from "react-hook-form";*/
 
@@ -25,15 +25,18 @@ function Body (){
       yourEmail: event.target[3].value,
      
     };
+
+    await api.post('/user', formData)
+
     const isValid = await schema.isValid(formData);
     console.log(isValid);
   }
 
   return (
     <div className="body">
-      <p id="p2">Oi! Seja bem vindo ao meu ChatBot! 
+      <p id="p2">Oi! Seja bem vindo ao meu "Bot"! 
       <br/> 
-      Preciso que você preencha os campos abaixo, com: nome completo,<br/>  cidade e estado,<br/> sua idade, <br/> seu e-mail,
+      Preciso que você preencha os campos abaixo com: nome completo,<br/>  cidade e estado,<br/> sua idade, <br/> seu e-mail,
       <br/> respectivamente.
       Muito obrigada!
       </p>
@@ -52,22 +55,22 @@ function Body (){
         <div className="plhdl">
 
       <div>
-        <Field name="yourName" type="text" placeholder="*Seu Nome"/>
+        <Field name="yourName" type="text" placeholder="*Seu Nome" required/>
         {errors.yourName && (
           <div>{errors.yourName}</div>
         )}
         </div>
 
         <div>
-        <Field name="yourLocal" type="text" placeholder="*Cidade e Estado"/>
+        <Field name="yourLocal" type="text" placeholder="*Cidade e Estado" required/>
         </div>
 
         <div>
-        <Field name="yourAge" type="number" placeholder="Data de Nascimento"/>
+        <Field name="yourAge" type="number" placeholder="Sua Idade" />
         </div>
 
         <div>
-        <Field name="yourEmail" type="email" placeholder="*E-mail"/>
+        <Field name="yourEmail" type="email" placeholder="*E-mail" required/>
         </div>
 
        </div>
