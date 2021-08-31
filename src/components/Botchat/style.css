@@ -1,5 +1,6 @@
 .body{
   background-image: url("../../assets/bg3.jpg");
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -9,7 +10,7 @@
 
 #p2{
   width: 80%;
-  margin: 30px 10px;
+  margin: 10px 10px;
   padding: 10px 0 10px 25px;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
@@ -40,7 +41,7 @@
   justify-content: center;
 }
 
-.btn{
+.btn, .openModalBtn{
   border: none;
   padding: 10px 70px;
   cursor: pointer;
@@ -50,6 +51,10 @@
   transition: background .3s;
 }
 
-.btn:hover{
+.openModalBtn{
+  margin: 10px 0 5px 0;
+}
+
+.openModalBtn:hover{
   background-color: rgb(101, 32, 148);
 }

@@ -1,16 +1,21 @@
 /* eslint-disable no-undef */
 import React from 'react';
+import { useState } from 'react';
 import './style.css';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import api from '../../services/api'
+import api from '../../services/api';
+import Modal from '../Modal';
+
+
+
 import axios from 'axios';
-/*import { useForm } from "react-hook-form";*/
+
 
 const schema = Yup.object().shape({
   yourName: Yup.string().required(),
   yourLocal: Yup.string().required(),
-  yourAge: Yup.number(),
+  yourAge: Yup.date(),
   yourEmail: Yup.string().email().required(),
 
 })
@@ -32,11 +37,13 @@ function Body (){
     console.log(isValid);
   }
 
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <div className="body">
       <p id="p2">Oi! Seja bem vindo ao meu "Bot"! 
       <br/> 
-      Preciso que você preencha os campos abaixo com: nome completo,<br/>  cidade e estado,<br/> sua idade, <br/> seu e-mail,
+      Preciso que você preencha os campos abaixo com: nome completo,<br/>  cidade e estado,<br/> sua data de nascimento, <br/> seu e-mail,
       <br/> respectivamente.
       Muito obrigada!
       </p>
@@ -66,7 +73,7 @@ function Body (){
         </div>
 
         <div>
-        <Field name="yourAge" type="number" placeholder="Sua Idade" />
+        <Field name="yourAge" type="date" placeholder="Data de Nascimento"/>
         </div>
 
         <div>
@@ -75,16 +82,19 @@ function Body (){
 
        </div>
 
-       <div className="botao">
-        <button className="btn">E N V I A R</button>
-        </div>
+        <div className="botao">
+        <button
+        className="openModalBtn"
+        onClick={() => {
+          setModalOpen(true);
+        }}> E N V I A R </button>
+
+      {modalOpen && <Modal setOpenModal={setModalOpen} />}
+  </div>
 
     </Form>
         )}
       </Formik>
-        
-     
-
 
     </div>
   )
