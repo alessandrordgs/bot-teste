@@ -2,19 +2,16 @@
   
 
 ## Tecnologias usadas:
-
 - React JS
 
 - Api Rest (feita no mockAPI)
 
 ## Bibliotecas usadas:
-
 - Yup
 - Formik
 - Axios
 
 ## Como funciona?
-
 - Você deve colocar seu nome, idade, localidade e e-mail nos campos/inputs;
 - Os dados serão enviados para a API Rest.
 
