@@ -17,6 +17,10 @@
 
 ##
 
+## Para testar:
+
+https://teste-nicole-react.netlify.app/
+
 ## Imagens
 
 **Parte inicial**
