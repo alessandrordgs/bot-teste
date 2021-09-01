@@ -8,10 +8,6 @@ import api from '../../services/api';
 import Modal from '../Modal';
 
 
-
-import axios from 'axios';
-
-
 const schema = Yup.object().shape({
   yourName: Yup.string().required(),
   yourLocal: Yup.string().required(),
